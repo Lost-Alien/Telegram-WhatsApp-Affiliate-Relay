@@ -1,0 +1,20 @@
+{
+  "name": "telegram-whatsapp-affiliate-relay",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Independent, browser-free Telegram channel to WhatsApp newsletter affiliate relay",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "start": "node --max-old-space-size=112 src/main.js",
+    "test": "node --test tests/*.test.js",
+    "check": "node scripts/check.js"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "7.0.0-rc14",
+    "dotenv": "16.6.1",
+    "pino": "9.14.0",
+    "qrcode": "1.5.4",
+    "teleproto": "1.230.1"
+  }
+}
