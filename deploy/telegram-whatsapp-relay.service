@@ -1,0 +1,37 @@
+[Unit]
+Description=Telegram to WhatsApp Affiliate Relay
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=600
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=relay
+Group=relay
+WorkingDirectory=/opt/telegram-whatsapp-relay
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/node --max-old-space-size=112 src/main.js
+Restart=on-failure
+RestartSec=20
+TimeoutStopSec=25
+KillMode=control-group
+MemoryAccounting=true
+MemoryHigh=160M
+MemoryMax=192M
+MemorySwapMax=128M
+CPUQuota=50%
+TasksMax=64
+OOMScoreAdjust=700
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/opt/telegram-whatsapp-relay/.data
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=telegram-whatsapp-relay
+
+[Install]
+WantedBy=multi-user.target
