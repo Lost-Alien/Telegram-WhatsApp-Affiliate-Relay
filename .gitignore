@@ -1,0 +1,36 @@
+# Dependencies and local runtimes
+node_modules/
+runtime/
+
+# Environment settings; only the empty template belongs in Git
+.env
+.env.*
+!.env.example
+.aws/
+.npmrc
+
+# Account sessions, outbox, QR data and local backups
+.data/
+*.sqlite*
+*.db
+*.db-*
+*.session*
+*.csv
+*.pem
+*.key
+*.p12
+*.pfx
+*.log
+*.bak
+*.tar.gz
+*.zip
+backups/
+releases/
+operations/private/
+
+# Generated files and editor settings
+coverage/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
